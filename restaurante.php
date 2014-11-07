@@ -1,28 +1,3 @@
-<?php
-if (isset($_POST['btn_enviar']))
-{
-    require_once 'controller/CozinheiroController.php';
-    
-    $cCozinheiro = new Cozinheiro();
-    $cCozinheiro->setNome($_POST['nome']);
-    $cCozinheiro->setDataNasc($_POST['ano'] . '-' . $_POST['mes'] . '-' .$_POST['dia']);
-    $cCozinheiro->setTelefoneParticular($_POST['telefone_particular']);
-    $cCozinheiro->setTelefoneOpcional($_POST['telefone_opcional']);
-    $cCozinheiro->setEmail($_POST['email']);
-    $cCozinheiro->setSenha($_POST['senha']);
-    $cCozinheiro->setCPF($_POST['cpf']);
-    $cCozinheiro->setEndereco($_POST['endereco']);
-    $cCozinheiro->setNumero($_POST['numero_endereco']);
-    $cCozinheiro->setBairro($_POST['bairro']);
-    $cCozinheiro->setCidade($_POST['cidade']);
-    $cCozinheiro->setEstado($_POST['estado']);
-    $cCozinheiro->setCEP($_POST['cep']);
-    $cCozinheiro->setFoto($_POST['anexo']);
-    
-    $cCozinheiroController = new CozinheiroController();
-    $cCozinheiroController->cadastrar($cCozinheiro);
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -48,11 +23,11 @@ if (isset($_POST['btn_enviar']))
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="navbar-brand" href="index.html">Trainning Chef</a>
+                        <a class="navbar-brand" href="index.php">Trainning Chef</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="index.php">Home</a></li>
                             <li><a href="pratos.html">Pratos</a></li>
                             <li><a href="destaque.html">Destaque do Mês</a></li>
                             <li><a href="estabelecimentoscadastrados.html">Estabelecimentos Cadastrados</a></li>
@@ -63,7 +38,7 @@ if (isset($_POST['btn_enviar']))
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastrar<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="fisico.php">Fisico</a></li>
+                                    <li><a href="cozinheiro.php">Fisico</a></li>
                                     <li class="divider"></li>
                                     <li><a href="restaurante.php">Jurídico</a></li>                
                                 </ul>
@@ -82,73 +57,58 @@ if (isset($_POST['btn_enviar']))
             <h1 align="center">Bem Vindo ao Training Chef</h1>
             <h3>Preencha o formulário para se cadastrar </h3>
             <br>
-            <form action="cozinheiro.php" method="post">
+            <form action="cadastrar.html" method="get">
                 <fieldset>
-                    <legend>Dados pessoais</legend>
+                    <legend>Dados do Estabelecimento</legend>
 
                     <div class="form-group">
-                        <label for="nome">Nome completo</label>
+                        <label for="nome">Nome do restaurante</label>
                         <input type="text" class="form-control" id="nome" name="nome" required>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="nome">Conte mais um pouco sobre seu restaurante</label>
+                        <input type="text" class="form-control" id="descricao" name="nome" required>
+                    </div>
 
                     <div class="form-group">
-                        <label for="nascimento">Nascimento
-                            <input type="text" name="dia" size="2" maxlength="2" placeholder="dd" id="nascimento"> 
-                            <input type="text" name="mes" size="2" maxlength="2" placeholder="mm" id="nascimento"> 
-                            <input type="text" name="ano" size="4" maxlength="4" placeholder="aaa" id="nascimento">
-                        </label>
-                    </div>	
-
-                    <div class="form-group">
-                        <label for="telefone">Telefone Particular
-                            <input type="tel" name="telefone_particular" id="telefone"
-                                   placeholder="(00) 0000-0000" required autocomplete="tel">
+                        <label for="telefone">Telefone comercial 1
+                            <input type="tel" name="telefone" id="telefone_comericai_primario"
+                                   placeholder="(dd) 0000-0000" required autocomplete="tel">
                         </label>
                     </div>
-
+                    
                     <div class="form-group">
-                        <label for="telefone">Telefone Opcional
-                            <input type="tel" name="telefone_opcional" id="telefone"
-                                   placeholder="(00) 0000-0000" autocomplete="tel">
+                        <label for="telefone">Telefone comercial 2
+                            <input type="tel" name="telefone" id="telefone_comericai_secundario"
+                                   placeholder="(dd) 0000-0000" required autocomplete="tel">
                         </label>
+                    </div>						
+                    
+                    <div class="form-group">
+                        <label for="cnpj">CNPJ</label>
+                        <input type="text" class="form-control" id="cnpj" name="cnpj" required placeholder="000.000.000/0000-00">
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <div class="input-group">
-                            <span class="input-group-addon">@</span>
-                            <input type="email" class="form-control"
-                                   id="email" name="email" placeholder="email@exemplo.com">
-                        </div>
+                        <label for="razao">Razão Social</label>
+                        <input type="text" class="form-control" id="razao" name="razao" required>
                     </div>
 
-                    <label for="email">Confirmar Email</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">@</span>
-                        <input type="fonf-email" class="form-control"
-                               id="fonf-email" name="conf_email" placeholder=" Confirmar email@exemplo.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cpf">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" required placeholder="000.000.000-00">
-                    </div>							
                 </fieldset>
-
                 <br>
                 <br>
-
                 <fieldset>
                     <legend>Dados de Endereço</legend>
 
                     <div class="form-group">
                         <label for="rua">Rua</label>
-                        <input type="text" class="form-control" id="rua" name="endereco" required>
+                        <input type="text" class="form-control" id="rua" name="nome" required>
                     </div>
 
                     <div class="form-group">
                         <label for="n">Número
-                            <input type="text" id="n" name="numero_endereco" required>
+                            <input type="text" id="n" name="nome" required>
                         </label>
                     </div>							 
 
@@ -188,13 +148,13 @@ if (isset($_POST['btn_enviar']))
 
                     <div class="form-group">
                         <label for="bairro">Bairro
-                            <input type="text" id="bairro" name="bairro" required>
+                            <input type="text" id="bairro" name="nome" required>
                         </label>
                     </div>
 
                     <div class="form-group">
                         <label for="cidade">Cidade
-                            <input type="text" id="cidade" name="cidade" required>
+                            <input type="text" id="cidade" name="nome" required>
                         </label>
                     </div>
 
@@ -209,6 +169,20 @@ if (isset($_POST['btn_enviar']))
                 <br>
                 <fieldset>
                     <legend>Dados de Login</legend>
+
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input type="email" class="form-control"
+                               id="email" name="email" placeholder="email@exemplo.com">
+                    </div>
+
+                    <label for="email">Confirmar Email</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input type="fonf-email" class="form-control"
+                               id="fonf-email" name="email" placeholder=" Confirmar email@exemplo.com">
+                    </div>
                     <br>
                     <div class="form-group">
                         <label for="anexo">Selecione foto</label>
@@ -222,15 +196,15 @@ if (isset($_POST['btn_enviar']))
 
                     <div class="form-group">
                         <label for="con-senha">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="conf_senha" name="con-senha" required>
+                        <input type="password" class="form-control" id="con-senha" name="con-senha" required>
                     </div>			  			  
 
                 </fieldset>	
                 <br>
                 <br>
-                <button type="submit" name="btn_enviar" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
                 <button type="reset" class="btn btn-primary">Limpar</button>
-                <a href="index.html"> <button type="button" class="btn btn-primary">Voltar</button></a>
+                <a href="index.php"> <button type="button" class="btn btn-primary">Voltar</button></a>
                 <br>
                 <br>		
             </form>
@@ -248,7 +222,7 @@ if (isset($_POST['btn_enviar']))
                     <h3>INFORMAÇÕES</h3>
                     <li type="circle">
                         <p>Training Chef, é uma  aplicação web, com o intuito de incentivar futuros cozinheiros a mostrarem seu talento na arte de cozinhar, em restaurantes que adotem esta ideia inovadora.</p>
-                        <p><a class="btn btn-default" href="quemsomos.html">Ver mais »</a></p>
+                        <p><a class="btn btn-default" <a href="quemsomos.html">Ver mais »</a></p>
                     </li>
                 </div>
                 <div class="footer-grid1">

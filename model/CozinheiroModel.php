@@ -18,35 +18,35 @@ class CozinheiroModel
         $cDAL->conectar();
 
         $sqlCadastraCozinheiro = "INSERT INTO cozinheiro (nome,
-                                                  data_nasc,
-                                                  telefone_particular,
-                                                  telefone_opcional,
-                                                  email,
-                                                  senha,
-                                                  cpf,
-                                                  endereco,
-                                                  numero,
-                                                  estado,
-                                                  bairro,
-                                                  cidade,
-                                                  cep,
-                                                  foto)
-                                          VALUES ('" . $cCozinheiro->getNome() . "',
-                                                  '" . $cCozinheiro->getDataNasc() . "',
-                                                  '" . $cCozinheiro->getTelefoneParticular() . "',
-                                                  '" . $cCozinheiro->getTelefoneOpcional() . "',
-                                                  '" . $cCozinheiro->getEmail() . "',
-                                                  '" . $cCozinheiro->getSenha() . "',
-                                                  '" . $cCozinheiro->getCPF() . "',
-                                                  '" . $cCozinheiro->getEndereco() . "',
-                                                  '" . $cCozinheiro->getNumero() . "',
-                                                  '" . $cCozinheiro->getEstado() . "',
-                                                  '" . $cCozinheiro->getBairro() . "',
-                                                  '" . $cCozinheiro->getCidade() . "',
-                                                  '" . $cCozinheiro->getCEP() . "',
-                                                  '" . $cCozinheiro->getFoto() . "')";
+                                                        data_nasc,
+                                                        telefone_particular,
+                                                        telefone_opcional,
+                                                        email,
+                                                        senha,
+                                                        cpf,
+                                                        endereco,
+                                                        numero,
+                                                        estado,
+                                                        bairro,
+                                                        cidade,
+                                                        cep,
+                                                        foto)
+                                                VALUES ('" . $cCozinheiro->getNome() . "',
+                                                        '" . $cCozinheiro->getDataNasc() . "',
+                                                        '" . $cCozinheiro->getTelefoneParticular() . "',
+                                                        '" . $cCozinheiro->getTelefoneOpcional() . "',
+                                                        '" . $cCozinheiro->getEmail() . "',
+                                                        '" . $cCozinheiro->getSenha() . "',
+                                                        '" . $cCozinheiro->getCPF() . "',
+                                                        '" . $cCozinheiro->getEndereco() . "',
+                                                        '" . $cCozinheiro->getNumero() . "',
+                                                        '" . $cCozinheiro->getEstado() . "',
+                                                        '" . $cCozinheiro->getBairro() . "',
+                                                        '" . $cCozinheiro->getCidade() . "',
+                                                        '" . $cCozinheiro->getCEP() . "',
+                                                        '" . $cCozinheiro->getFoto() . "')";
         mysql_query($sqlCadastraCozinheiro)
-                or die ("Aconteceu um erro: Não foi possível cadastrar um cozinheiro.");
+                or die ("Aconteceu um erro: Não foi possível cadastrar o cozinheiro.");
     }
 }
 

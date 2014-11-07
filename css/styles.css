@@ -129,10 +129,11 @@ body {
     font-size: 21px;
     line-height: 1.4;
   }
+}
 
 /*footer*/
 .footergeral{
-	border: 3px solid #0000FF; /* cor da borda do roda pé */
+	border: 3px solid #0000FF; /* cor da borda do roda pï¿½ */
 	margin:auto 0;
 
 }
@@ -144,7 +145,7 @@ body {
 	color:#000000;
 }
 .footer-grid1 h3{
-	color:#0000FF;	/* Cor do titudo do texto Roda pé*/
+	color:#0000FF;	/* Cor do titudo do texto Roda pï¿½*/
 	padding: 10px 0 10px 0;
 	font-size: 14px;
 	font-family: 'Libre Baskerville', serif;
@@ -153,7 +154,7 @@ body {
 .footer-grid1 a{
 	text-decoration: none;
 	font-size: 12px;
-	color:#0000FF; /* Cor do texto Roda pé*/
+	color:#0000FF; /* Cor do texto Roda pï¿½*/
 	text-transform: none;
 	line-height: 2;
 }
