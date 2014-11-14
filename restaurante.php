@@ -8,54 +8,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!--[if lt IE 9]>
-                <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <link href="css/styles.css" rel="stylesheet">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="navbar-wrapper">
-            <div class="container">
-                <div class="navbar navbar-inverse navbar-static-top">
-
-                    <div class="navbar-header">
-                        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <a class="navbar-brand" href="index.php">Trainning Chef</a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.php">Home</a></li>
-                            <li><a href="pratos.html">Pratos</a></li>
-                            <li><a href="destaque.html">Destaque do Mês</a></li>
-                            <li><a href="estabelecimentoscadastrados.html">Estabelecimentos Cadastrados</a></li>
-                            <li><a href="parceiros.html">Parceiros</a></li>
-                            <li><a href="quemsomos.html">Quem Somos</a></li>
-                            <li><a href="login.html">Login</a></li>			
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastrar<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="cozinheiro.php">Fisico</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="restaurante.php">Jurídico</a></li>                
-                                </ul>
-                            </li>	
-
-                        </ul>
-                    </div>
-
-                </div>
-            </div><!-- /container -->
-        </div><!-- /navbar wrapper -->
-
+        <?php include 'view/menu_navegacao.php'; ?>
+        <?php include 'view/slider.php'; ?>
         <!-- Inicio Tela de Formulario -->
-        <div class="telaCadastro">
-
-            <h1 align="center">Bem Vindo ao Training Chef</h1>
-            <h3>Preencha o formulário para se cadastrar </h3>
+        <div class="container marketing">
+            <p class="text-info">Preencha o formulário para se cadastrar</p>
             <br>
             <form action="cadastrar.html" method="get">
                 <fieldset>
@@ -65,7 +29,7 @@
                         <label for="nome">Nome do restaurante</label>
                         <input type="text" class="form-control" id="nome" name="nome" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="nome">Conte mais um pouco sobre seu restaurante</label>
                         <input type="text" class="form-control" id="descricao" name="nome" required>
@@ -77,14 +41,14 @@
                                    placeholder="(dd) 0000-0000" required autocomplete="tel">
                         </label>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="telefone">Telefone comercial 2
                             <input type="tel" name="telefone" id="telefone_comericai_secundario"
                                    placeholder="(dd) 0000-0000" required autocomplete="tel">
                         </label>
                     </div>						
-                    
+
                     <div class="form-group">
                         <label for="cnpj">CNPJ</label>
                         <input type="text" class="form-control" id="cnpj" name="cnpj" required placeholder="000.000.000/0000-00">
@@ -208,46 +172,7 @@
                 <br>
                 <br>		
             </form>
-        </div>
-
-        <!-- Fim de Tela de Formulario -->
-        <div class="container marketing">
-
-            <hr class="featurette-divider">		
-            <!-- FOOTER -->
-            <div class="footergeral">
-
-                <div class="footer-grid1">
-
-                    <h3>INFORMAÇÕES</h3>
-                    <li type="circle">
-                        <p>Training Chef, é uma  aplicação web, com o intuito de incentivar futuros cozinheiros a mostrarem seu talento na arte de cozinhar, em restaurantes que adotem esta ideia inovadora.</p>
-                        <p><a class="btn btn-default" <a href="quemsomos.html">Ver mais »</a></p>
-                    </li>
-                </div>
-                <div class="footer-grid1">
-                    <h3>Navegação</h3>
-                    <ul>
-                        <li type="circle"><a href="destaque.html"> Destaque do Mês</a></li>
-                        <li type="circle"><a href="pratos.html"> Receitas</a></li>
-                        <li type="circle"><a href="parceiros.html">Parceiros</a></li>
-                        <li type="circle"><a href="cadastrar.html">Cadastrar</a></li>
-                        <li type="circle"><a href="login.html">Login</a></li>
-                    </ul>						
-                </div>
-                <div class="footer-grid1">
-                    <h3>Curta nossa página</h3>
-                    <div>
-                        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftrainningchef&amp;width&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:290px;" allowTransparency="true"></iframe>
-                    </div>
-                </div>
-            </div>   
-        </div>
-        <p class="pull-right"><a href="#">Voltar ao Topo</a></p>
-        <p class="direito">Copyright © 2014; Trainning Chef; Direitos Reservados</p>
+        <?php include 'view/rodape.php'; ?>
     </div><!-- /.container -->
-    <!-- script references -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

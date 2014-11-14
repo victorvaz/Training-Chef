@@ -1,11 +1,10 @@
 <?php
-if (isset($_POST['btn_enviar']))
-{
+if (isset($_POST['btn_enviar'])) {
     require_once 'controller/CozinheiroController.php';
-    
+
     $cCozinheiro = new Cozinheiro();
     $cCozinheiro->setNome($_POST['nome']);
-    $cCozinheiro->setDataNasc($_POST['ano'] . '-' . $_POST['mes'] . '-' .$_POST['dia']);
+    $cCozinheiro->setDataNasc($_POST['ano'] . '-' . $_POST['mes'] . '-' . $_POST['dia']);
     $cCozinheiro->setTelefoneParticular($_POST['telefone_particular']);
     $cCozinheiro->setTelefoneOpcional($_POST['telefone_opcional']);
     $cCozinheiro->setEmail($_POST['email']);
@@ -18,7 +17,7 @@ if (isset($_POST['btn_enviar']))
     $cCozinheiro->setEstado($_POST['estado']);
     $cCozinheiro->setCEP($_POST['cep']);
     $cCozinheiro->setFoto($_POST['anexo']);
-    
+
     $cCozinheiroController = new CozinheiroController();
     $cCozinheiroController->cadastrar($cCozinheiro);
 }
@@ -32,55 +31,19 @@ if (isset($_POST['btn_enviar']))
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <!--[if lt IE 9]>
-                <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <link href="css/styles.css" rel="stylesheet">
     </head>
     <body>
-        <div class="navbar-wrapper">
-            <div class="container">
-                <div class="navbar navbar-inverse navbar-static-top">
-
-                    <div class="navbar-header">
-                        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <a class="navbar-brand" href="index.html">Trainning Chef</a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li><a href="pratos.html">Pratos</a></li>
-                            <li><a href="destaque.html">Destaque do Mês</a></li>
-                            <li><a href="estabelecimentoscadastrados.html">Estabelecimentos Cadastrados</a></li>
-                            <li><a href="parceiros.html">Parceiros</a></li>
-                            <li><a href="quemsomos.html">Quem Somos</a></li>
-                            <li><a href="login.html">Login</a></li>			
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastrar<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="fisico.php">Fisico</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="restaurante.php">Jurídico</a></li>                
-                                </ul>
-                            </li>	
-
-                        </ul>
-                    </div>
-
-                </div>
-            </div><!-- /container -->
-        </div><!-- /navbar wrapper -->
-
+        <?php include 'view/menu_navegacao.php'; ?>
+        <?php include 'view/slider.php'; ?>
         <!-- Inicio Tela de Formulario -->
-        <div class="telaCadastro">
-
-            <h1 align="center">Bem Vindo ao Training Chef</h1>
-            <h3>Preencha o formulário para se cadastrar </h3>
+        <div class="container marketing">
+            <p class="text-info">Preencha o formulário para se cadastrar</p>
             <br>
             <form action="cozinheiro.php" method="post">
                 <fieldset>
@@ -234,46 +197,7 @@ if (isset($_POST['btn_enviar']))
                 <br>
                 <br>		
             </form>
-        </div>
-
-        <!-- Fim de Tela de Formulario -->
-        <div class="container marketing">
-
-            <hr class="featurette-divider">		
-            <!-- FOOTER -->
-            <div class="footergeral">
-
-                <div class="footer-grid1">
-
-                    <h3>INFORMAÇÕES</h3>
-                    <li type="circle">
-                        <p>Training Chef, é uma  aplicação web, com o intuito de incentivar futuros cozinheiros a mostrarem seu talento na arte de cozinhar, em restaurantes que adotem esta ideia inovadora.</p>
-                        <p><a class="btn btn-default" href="quemsomos.html">Ver mais »</a></p>
-                    </li>
-                </div>
-                <div class="footer-grid1">
-                    <h3>Navegação</h3>
-                    <ul>
-                        <li type="circle"><a href="destaque.html"> Destaque do Mês</a></li>
-                        <li type="circle"><a href="pratos.html"> Receitas</a></li>
-                        <li type="circle"><a href="parceiros.html">Parceiros</a></li>
-                        <li type="circle"><a href="cadastrar.html">Cadastrar</a></li>
-                        <li type="circle"><a href="login.html">Login</a></li>
-                    </ul>						
-                </div>
-                <div class="footer-grid1">
-                    <h3>Curta nossa página</h3>
-                    <div>
-                        <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftrainningchef&amp;width&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:290px;" allowTransparency="true"></iframe>
-                    </div>
-                </div>
-            </div>   
-        </div>
-        <p class="pull-right"><a href="#">Voltar ao Topo</a></p>
-        <p class="direito">Copyright © 2014; Trainning Chef; Direitos Reservados</p>
-    </div><!-- /.container -->
-    <!-- script references -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+            <?php include 'view/rodape.php'; ?>
+        </div><!-- /.container -->
 </body>
 </html>
