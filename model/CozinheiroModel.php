@@ -10,7 +10,9 @@ class CozinheiroModel
     /**
      * Função para cadastrar um cozinheiro.
      * @author Víctor Vaz de Oliveira <victor-vaz@hotmail.com>
-     * @data 05/11/2014
+     * @data 14/11/2014
+     * @param Cozinheiro $cCozinheiro Entidade Cozinheiro
+     * @return boolean
      */
     public function cadastrarCozinheiro(Cozinheiro $cCozinheiro)
     {
@@ -47,6 +49,8 @@ class CozinheiroModel
                                                         '" . $cCozinheiro->getFoto() . "')";
         mysql_query($sqlCadastraCozinheiro)
                 or die ("Aconteceu um erro: Não foi possível cadastrar o cozinheiro.");
+        
+        return true;
     }
 }
 

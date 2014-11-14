@@ -7,6 +7,13 @@ else { require_once 'entity/Restaurante.php'; }
 
 class RestauranteModel
 {
+    /**
+     * Função para cadastrar um Restaurante
+     * @author Víctor Vaz de Oliveira <victor-vaz@hotmail.com.br>
+     * @data 14/11/2014
+     * @param Restaurante $cRestaurante
+     * @return boolean
+     */
     public function cadastrarRestaurante(Restaurante $cRestaurante)
     {
         $cDAL = new DAL();
@@ -44,6 +51,8 @@ class RestauranteModel
                                                             '".$cRestaurante->getFoto()."');";
         mysql_query($sqlCadastraRestaurante)
             or die ("Aconteceu um erro: Não foi possível cadastrar o restaurante.");
+        
+        return true;
     }
 }
 ?>
