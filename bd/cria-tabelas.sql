@@ -1,3 +1,4 @@
+-- Versão 1
 CREATE TABLE cozinheiro
 (
   id int unsigned auto_increment not null,
@@ -37,3 +38,11 @@ CREATE TABLE restaurante
     foto varchar(100) not null,
     PRIMARY KEY (id)
 );
+
+-- Versão 2
+ALTER TABLE cozinheiro
+  ADD quem_sou TEXT not null AFTER foto;
+
+-- Versão 3
+ALTER TABLE cozinheiro
+  ADD site VARCHAR(80) not null AFTER quem_sou;

@@ -1,6 +1,7 @@
 <?php
-if (file_exists('UsuarioController.php')) { require_once 'UsuarioController.php'; }
-else { require_once 'controller/UsuarioController.php'; }
+if (file_exists('../controller/UsuarioController.php')) { require_once '../controller/UsuarioController.php'; }
+else if (file_exists('controller/UsuarioController.php')) { require_once 'controller/UsuarioController.php'; }
+else { require_once 'UsuarioController.php'; }
 
 if (file_exists('../model/CozinheiroModel.php')) { require_once '../model/CozinheiroModel.php'; }
 else { require_once '/model/CozinheiroModel.php'; }
@@ -28,6 +29,17 @@ class CozinheiroController extends UsuarioController
         {
             ?><script>alert("Não foi possível cadastrar o cozinheiro.");</script><?php
         }
+    }
+    
+    /**
+     * Função para buscar um perfil de Cozinheiro por um id
+     * @param int $id
+     * @return Cozinheiro
+     */
+    public function buscarPerfilCozinheiro($id)
+    {
+        $cCozinheiroModel = new CozinheiroModel();
+        return $cCozinheiroModel->buscarDadosCozinheiroPorId($id);
     }
 
     /**

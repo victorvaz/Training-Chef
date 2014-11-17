@@ -17,6 +17,8 @@ class Cozinheiro
     private $_cidade;
     private $_cep;
     private $_foto;
+    private $_quemSou;
+    private $_site;
 
     public function setId($id) { $this->_id = $id; }
     public function getId() { return $this->_id; }
@@ -62,6 +64,12 @@ class Cozinheiro
 
     public function setFoto($foto) { $this->_foto = $foto; }
     public function getFoto(){ return $this->_foto; }
+    
+    public function setQuemSou($quemSou) { $this->_quemSou = $quemSou; }
+    public function getQuemSou() { return $this->_quemSou; }
+    
+    public function setSite($site) { $this->_site = $site; }
+    public function getSite() { return $this->_site; }
 }
 
 ?>

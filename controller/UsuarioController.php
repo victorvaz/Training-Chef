@@ -1,4 +1,6 @@
 <?php
+@session_start();
+
 if (file_exists('../entity/Usuario.php')) { require_once '../entity/Usuario.php'; }
 else { require_once 'entity/Usuario.php'; }
 
@@ -87,7 +89,6 @@ class UsuarioController
      */
     public function iniciarSessao(Usuario $cUsuario, $tipo)
     {
-        @session_start();
         $_SESSION[INDICE_SESSION_ID_USUARIO] = $cUsuario->getID();
         $_SESSION[INDICE_SESSION_EMAIL_USUARIO] = $cUsuario->getEmail();
         $_SESSION[INDICE_SESSION_SENHA_USUARIO] = $cUsuario->getSenha();
@@ -95,6 +96,11 @@ class UsuarioController
         
         /** @debug **/
         // print "<script>alert('Usuário autenticado com sucesso: ID: {$_SESSION[INDICE_SESSION_ID_USUARIO]}, E-MAIL: {$_SESSION[INDICE_SESSION_EMAIL_USUARIO]}, SENHA: {$_SESSION[INDICE_SESSION_SENHA_USUARIO]}, TIPO: {$_SESSION[INDICE_SESSION_TIPO_USUARIO]}');</script>";
+    }
+    
+    public function mostrarIdadeCozinheiro($dataNasc)
+    {
+        return date("Y") - date("Y", strtotime($dataNasc));
     }
 }
 
