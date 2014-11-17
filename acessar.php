@@ -1,3 +1,4 @@
+<?php require_once 'controller/UsuarioController.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,16 +27,23 @@
                         <h1 class="text-center">Training Chef</h1><br>
                         <p class="text-info text-center">Informe seu usuário e senha para acessar sua conta!</p>
                     </div>
+                    <?php if (isset($_POST['btn_entrar'])) : ?>
+                        <?php $cUsuario = new Usuario(); ?>
+                        <?php $cUsuario->setEmail($_POST['email']); ?>
+                        <?php $cUsuario->setSenha($_POST['senha']); ?>
+                        <?php $cUsuarioController = new UsuarioController(); ?>
+                        <?php $cUsuarioController->logar($cUsuario); ?>
+                    <?php endif; ?>
                     <div class="modal-body">
-                        <form class="form col-md-12 ">
+                        <form name="form_logar" method="post" action="" class="form col-md-12 ">
                             <div class="form-group">
-                                <input type="text" class="form-control input-lg" placeholder="E-mail">
+                                <input name="email" type="text" class="form-control input-lg" placeholder="E-mail">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control input-lg" placeholder="Senha">
+                                <input name="senha" type="password" class="form-control input-lg" placeholder="Senha">
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary btn-lg btn-block">Entrar</button>
+                                <button type="submit" name="btn_entrar" class="btn btn-primary btn-lg btn-block">Entrar</button>
                             </div>
                             <p class="text-info text-center">Ainda não tem uma conta?</p>
                             <p><a href="cozinheiro.php">Quero me cadastrar como cozinheiro!</a> ou <a href="restaurante.php">Quero me cadastrar como restaurante!</a></p>

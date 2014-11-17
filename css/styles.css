@@ -135,6 +135,7 @@ body {
 .footergeral{
 	border: 3px solid #0000FF; /* cor da borda do roda p� */
 	margin:auto 0;
+  background-color: #555;
 
 }
 .footer-grid1{

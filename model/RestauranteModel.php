@@ -54,5 +54,38 @@ class RestauranteModel
         
         return true;
     }
+    
+    public function verificarExistenciaRestaurante(Restaurante $cRestaurante)
+    {
+        $DAL = new DAL();
+        $DAL->conectar();
+        
+        $sqlBuscaExistenciaRestaurante = "SELECT id,
+                                                 email,
+                                                 senha
+                                            FROM restaurante
+                                           WHERE email = '" . $cRestaurante->getEmail() . "'
+                                             AND senha = '" . $cRestaurante->getSenha() . "'";
+        
+        $queryBuscaExistenciaRestaurante = mysql_query($sqlBuscaExistenciaRestaurante)
+                or die ("Aconteceu um erro: Não foi possível cadastrar o restaurante.");
+        
+        $rowBuscaExistenciaRestaurante = mysql_fetch_array($queryBuscaExistenciaRestaurante);
+        
+        if (mysql_num_rows($queryBuscaExistenciaRestaurante) > 0)
+        {
+            $resultadoRestaurante = new Restaurante();
+            
+            $resultadoRestaurante->setId($rowBuscaExistenciaRestaurante['id']);
+            $resultadoRestaurante->setEmail($rowBuscaExistenciaRestaurante['email']);
+            $resultadoRestaurante->setSenha($rowBuscaExistenciaRestaurante['senha']);
+            
+            return $resultadoRestaurante;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 ?>

@@ -52,6 +52,45 @@ class CozinheiroModel
         
         return true;
     }
+    
+    /**
+     * Função para buscar a existência de um cadastro de cozinheiro
+     * @author Víctor Vaz de Oliveira <victor-vaz@hotmail.com>
+     * @data 14/11/2014
+     * @param Cozinheiro $cCozinheiro
+     * @return boolean Retorna o Cozinheiro caso exista ou FALSE caso não exista.
+     */
+    public function verificarExistenciaCozinheiro(Cozinheiro $cCozinheiro)
+    {
+        $DAL = new DAL();
+        $DAL->conectar();
+        
+        $sqlBuscaExistenciaCozinheiro = "SELECT id,
+                                                email,
+                                                senha
+                                           FROM cozinheiro
+                                          WHERE email = '" . $cCozinheiro->getEmail() . "'
+                                            AND senha = '" . $cCozinheiro->getSenha() . "'";
+        
+        $queryBuscaExistenciaCozinheiro = mysql_query($sqlBuscaExistenciaCozinheiro)
+                or die ("Aconteceu um erro: Não foi possível cadastrar o cozinheiro.");
+        
+        $rowBuscaExistenciaCozinheiro = mysql_fetch_array($queryBuscaExistenciaCozinheiro);
+        
+        if (mysql_num_rows($queryBuscaExistenciaCozinheiro) > 0)
+        {
+            $resultadoCozinheiro = new Cozinheiro();
+            $resultadoCozinheiro->setId($rowBuscaExistenciaCozinheiro['id']);
+            $resultadoCozinheiro->setEmail($rowBuscaExistenciaCozinheiro['email']);
+            $resultadoCozinheiro->setSenha($rowBuscaExistenciaCozinheiro['senha']);
+            
+            return $resultadoCozinheiro;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 ?>
