@@ -49,7 +49,7 @@ class UsuarioController
                 
                 $this->iniciarSessao($cUsuario, TIPO_USUARIO_COZINHEIRO);
                 
-                header("Location: admin_cozinheiro/index.php");
+                ?><script>window.location = "admin_cozinheiro/index.php"</script><?php
             }
             else
             {
@@ -68,7 +68,7 @@ class UsuarioController
                     
                     $this->iniciarSessao($cUsuario, TIPO_USUARIO_RESTAURANTE);
                     
-                    header("Location: admin_restaurante/index.php");
+                    ?><script>window.location = "admin_cozinheiro/index.php"</script><?php
                 }
                 else
                 {
