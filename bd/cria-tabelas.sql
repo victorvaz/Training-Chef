@@ -46,3 +46,15 @@ ALTER TABLE cozinheiro
 -- Versão 3
 ALTER TABLE cozinheiro
   ADD site VARCHAR(80) not null AFTER quem_sou;
+
+-- Versão 4
+CREATE TABLE experiencia
+(
+    id int unsigned auto_increment not null,
+    id_cozinheiro int not null,
+    funcao varchar(50) not null,
+    descricao TEXT not null,
+    data_inicio DATE not null,
+    data_fim DATE not null,
+    PRIMARY KEY (id)
+);

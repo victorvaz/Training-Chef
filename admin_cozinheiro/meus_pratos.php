@@ -35,7 +35,7 @@
                 <div class="container">
                     <h1>Meus Pratos</h1>
                     <p>Veja os seus pratos que estão na disputa por uma oportunidade em um restaurante!</p>
-                    <h3><a class="label label-default" href="cadastrar_prato.html" role="button">Cadastrar</a></h3>
+                    <h3><a class="label label-default" href="cadastrar_prato.php" role="button">Cadastrar</a></h3>
                 </div>
             </div>
             <div class="row">

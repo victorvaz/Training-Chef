@@ -1,3 +1,3 @@
 <?php
-    print "Bem-vindo restaurante!";
+    header("Location: ver_pratos.html");
 ?>

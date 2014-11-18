@@ -2,12 +2,10 @@
     <div class="container">
         <div class="navbar navbar-inverse navbar-static-top">      
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.php">Training Chef</a>
+                <a class="navbar-brand" href="index.php">Training Chef</a>        
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li <?php if ($_SERVER['PHP_SELF'] == '/trainingchef/index.php'){ ?>class="active"<?php } ?>>
-                        <a href="index.php">Home</a>
                     </li>
                     <li <?php if ($_SERVER['PHP_SELF'] == '/trainingchef/pratos.php'){ ?>class="active"<?php } ?>>
                         <a href="pratos.php">Pratos</a>
