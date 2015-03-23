@@ -13,9 +13,9 @@ define("INDICE_SESSION_TIPO_USUARIO", "TIPO_USUARIO");
 class DAL
 {
     private $_servidor = "localhost";
-    private $_usuario = "root";
-    private $_senha = "";
-    private $_banco = "training_chef";
+    private $_usuario = "962757";
+    private $_senha = "tig2015";
+    private $_banco = "962757";
 
     public function conectar()
     {
