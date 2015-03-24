@@ -41,6 +41,10 @@ class SiteConfig
         1 => array(
             'href' => 'quem_somos.php',
             'desc' => 'Sobre o projeto'
+        ),
+        2 => array(
+            'href' => 'cadastrar.php',
+            'desc' => 'Cadastrar'
         )
     );
 }
