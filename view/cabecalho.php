@@ -24,8 +24,8 @@
                     </div>
                 </div>
             </div>
-        </div><!--/.container-->
-    </div><!--/.top-bar-->
+        </div>
+    </div>
 
     <nav class="navbar navbar-inverse" role="banner">
         <div class="container">
@@ -43,16 +43,15 @@
 
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">O que somos</a></li>
-                    <li><a href="services.html">Pratos</a></li>
-                    <li><a href="portfolio.html">Restaurantes</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="blog.html">Participar</a></li> 
-                    <li><a href="contact-us.html">Contato</a></li>                        
+                    <?php for ($i = 0; $i < count(SiteConfig::$MENU_PAGINAS); $i++) : ?>
+                    <li <?php if ($_SERVER['PHP_SELF'] == SiteConfig::$PREFIXO_ENDERECO . SiteConfig::$MENU_PAGINAS[$i]['href']) : ?>class="active"<?php endif; ?>>
+                        <a href="<?php print SiteConfig::$MENU_PAGINAS[$i]['href']; ?>">
+                            <?php print SiteConfig::$MENU_PAGINAS[$i]['desc']; ?>
+                        </a>
+                    </li>
+                    <?php endfor; ?>                        
                 </ul>
             </div>
-        </div><!--/.container-->
-    </nav><!--/nav-->
-
+        </div>
+    </nav>
 </header>

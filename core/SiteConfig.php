@@ -22,4 +22,25 @@ class SiteConfig
      * @var String
      */
     public static $LOGOTIPO_HORIZONTAL = "view/images/logotipo_horizontal.png";
+    
+    /**
+     * Prefixo do endereço para as páginas
+     * @var type 
+     */
+    public static $PREFIXO_ENDERECO = "/trainingchef/";
+    
+    /**
+     * Páginas de menu
+     * @var type 
+     */
+    public static $MENU_PAGINAS = array(
+        0 => array(
+            'href' => 'index.php',
+            'desc' => 'Home'
+        ),
+        1 => array(
+            'href' => 'quem_somos.php',
+            'desc' => 'Sobre o projeto'
+        )
+    );
 }

@@ -6,7 +6,7 @@ $arraySlider = array(
     0 => array(
         'background-image' => 'view/images/slide/slide01.png',
         'title'            => 'Onde cozinheiros encontram restaurantes',
-        'text'             => 'para mostrar a sua habilidade na cozinha',
+        'text'             => 'para mostrarem as suas habilidades na cozinha',
         'button'           => 'Saber mais',
         'image'            => 'view/images/logotipo_quadrada.png'
     ),
