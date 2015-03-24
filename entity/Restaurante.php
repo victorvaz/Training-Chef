@@ -1,10 +1,13 @@
 <?php
 
+if (file_exists('entity/Entidade.php')) { require_once 'entity/Entidade.php'; }
+else { require_once 'Entidade.php'; }
+
 /**
  * Entidade Restaurante
  * @author Victor Vaz de Oliveira <victor-vaz@hotmail.com>
  */
-class Restaurante
+class Restaurante implements Entidade
 {
     private $id;
     private $nome;

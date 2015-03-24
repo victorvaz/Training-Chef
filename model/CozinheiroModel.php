@@ -6,6 +6,9 @@ else { require_once 'core/DAL.php'; }
 if (file_exists('../entity/Cozinheiro.php')) { require_once '../entity/Cozinheiro.php'; }
 else { require_once 'entity/Cozinheiro.php'; }
 
+if (file_exists('../entity/Entidade.php')) { require_once '../entity/Entidade.php'; }
+else { require_once 'entity/Entidade.php'; }
+
 /**
  * Classe modelo para a entidade Cozinheiro
  * @author Victor Vaz de Oliveira <victor-vaz@hotmail.com>
