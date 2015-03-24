@@ -6,17 +6,20 @@ else { require_once 'core/DAL.php'; }
 if (file_exists('../entity/Restaurante.php')) { require_once '../entity/Restaurante.php'; }
 else { require_once 'entity/Restaurante.php'; }
 
+if (file_exists('model/Model.php')) { require_once 'model/Model.php'; }
+else { require_once 'Model.php'; }
+
 /**
  * Classe modelo para a entidade Restaurante
  * @author Victor Vaz de Oliveira <victor-vaz@hotmail.com>
  */
-class RestauranteModel
+class RestauranteModel implements Model
 {
     /**
      * Função para cadastrar um Restaurante.
      * @param Restaurante $Restaurante
      */
-    public function cadastrar(Restaurante $Restaurante)
+    public function cadastrar(Entidade $Restaurante)
     {
         $DAL = new DAL();
         $DAL->conectar();
@@ -31,7 +34,7 @@ class RestauranteModel
             or die ("Aconteceu um erro: Não foi possível cadastrar o restaurante.");
     }
     
-    public function atualizar(Restaurante $Restaurante)
+    public function atualizar(Entidade $Restaurante)
     {
         
     }

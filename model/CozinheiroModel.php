@@ -6,20 +6,20 @@ else { require_once 'core/DAL.php'; }
 if (file_exists('../entity/Cozinheiro.php')) { require_once '../entity/Cozinheiro.php'; }
 else { require_once 'entity/Cozinheiro.php'; }
 
-if (file_exists('../entity/Entidade.php')) { require_once '../entity/Entidade.php'; }
-else { require_once 'entity/Entidade.php'; }
+if (file_exists('model/Model.php')) { require_once 'model/Model.php'; }
+else { require_once 'Model.php'; }
 
 /**
  * Classe modelo para a entidade Cozinheiro
  * @author Victor Vaz de Oliveira <victor-vaz@hotmail.com>
  */
-class CozinheiroModel
+class CozinheiroModel implements Model
 {
     /**
      * Função para cadastrar um cozinheiro.
      * @param Cozinheiro $Cozinheiro
      */
-    public function cadastrar(Cozinheiro $Cozinheiro)
+    public function cadastrar(Entidade $Cozinheiro)
     {
         $DAL = new DAL();
         $DAL->conectar();
@@ -34,7 +34,7 @@ class CozinheiroModel
             or die ("Aconteceu um erro: Não foi possível cadastrar o cozinheiro.");
     }
     
-    public function atualizar(Cozinheiro $Cozinheiro)
+    public function atualizar(Entidade $Cozinheiro)
     {
         
     }
