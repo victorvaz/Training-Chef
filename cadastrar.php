@@ -1,3 +1,36 @@
+<?php
+if (isset($_POST['btn_cadastrar']))
+{
+    if ($_POST['tipo'] == "cozinheiro")
+    {
+        include_once 'model/CozinheiroModel.php';
+        
+        $Cozinheiro = new Cozinheiro();
+        $Cozinheiro->setNome($_POST['nome']);
+        $Cozinheiro->setEmail($_POST['email']);
+        $Cozinheiro->setSenha($_POST['senha']);
+        
+        $CozinheiroModel = new CozinheiroModel();
+        $CozinheiroModel->cadastrar($Cozinheiro);
+        
+        ?><script>alert("Cozinheiro cadastrado com sucesso!");</script><?php
+    }
+    else if ($_POST['tipo'] == "restaurante")
+    {
+        include_once 'model/RestauranteModel.php';
+        
+        $Restaurante = new Restaurante();
+        $Restaurante->setNome($_POST['nome']);
+        $Restaurante->setEmail($_POST['email']);
+        $Restaurante->setSenha($_POST['senha']);
+        
+        $RestauranteModel = new RestauranteModel();
+        $RestauranteModel->cadastrar($Restaurante);
+        
+        ?><script>alert("Restaurante cadastrado com sucesso!");</script><?php
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <?php include 'view/head.php'; ?>
@@ -14,7 +47,8 @@
                         </div>
                         <div class="col-sm-7 col-sm-6">
                             <p class="left">Para participar do Training Chef, você precisa preencher o formulário abaixo:</p>
-                            <form action="cadastrar.php" method="post">
+                            <form action="cadastrar.php" method="post" onsubmit="return validarForm(this)">
+                                <p><input style="width: 100%" type="text" name="nome" placeholder="Seu nome" /></p>
                                 <p><input style="width: 100%" type="email" name="email" placeholder="Seu e-mail" /></p>
                                 <p><input style="width: 100%" type="password" name="senha" placeholder="Sua senha" /></p>
                                 <p><input style="width: 100%" type="password" name="conf_senha" placeholder="Confirme sua senha" /></p>
@@ -44,5 +78,6 @@
         <script src="view/js/jquery.isotope.min.js"></script>
         <script src="view/js/main.js"></script>
         <script src="view/js/wow.min.js"></script>
+        <script src="view/js/validacoes/validaFormCadastro.js"></script>
     </body>
 </html>
