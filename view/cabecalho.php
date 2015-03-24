@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     <img src="<?php print SiteConfig::$LOGOTIPO_HORIZONTAL; ?>" alt="logo" height="30">
                 </a>
             </div>
