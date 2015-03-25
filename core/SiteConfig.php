@@ -45,6 +45,10 @@ class SiteConfig
         2 => array(
             'href' => 'cadastrar.php',
             'desc' => 'Cadastrar'
+        ),
+        3 => array(
+            'href' => 'logar.php',
+            'desc' => 'Acessar'
         )
     );
 }
