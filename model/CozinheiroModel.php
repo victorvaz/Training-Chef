@@ -43,6 +43,44 @@ class CozinheiroModel implements Model
     {
         
     }
+    
+    /**
+     * Função para buscar cozinheiros por e-mail e senha.
+     * @param String $email
+     * @param String $senha
+     * @return \Cozinheiro Lista de cozinheiros de acordo com a busca.
+     */
+    public function buscarPorEmailSenha($email, $senha)
+    {
+        $DAL = new DAL();
+        $DAL->conectar();
+        
+        $sql = "SELECT id,
+                       nome,
+                       email,
+                       senha
+                  FROM cozinheiro
+                 WHERE email = '{$email}'
+                   AND senha = '{$senha}'";
+                   
+        $query = mysql_query($sql)
+            or die ("Aconteceu um erro: Não foi possível buscar um cozinheiro por e-mail e senha");
+        
+        $ListaCozinheiros = array();
+        
+        while ($row = mysql_fetch_array($query))
+        {        
+            $Cozinheiro = new Cozinheiro();
+            $Cozinheiro->setID($row['id']);
+            $Cozinheiro->setNome($row['nome']);
+            $Cozinheiro->setEmail($row['email']);
+            $Cozinheiro->setSenha($row['senha']);
+            
+            $ListaCozinheiros[] = $Cozinheiro;
+        }
+        
+        return $ListaCozinheiros;
+    }
 
     public function buscarTodos()
     {
