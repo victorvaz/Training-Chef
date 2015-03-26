@@ -74,7 +74,7 @@ class RestauranteController implements EntidadeAutenticavel
         if ($resultadoValidacao == false)
         {
             @session_destroy();
-            header("Location: ..\logar.php");
+            header("Location: ../logar.php");
             return false;
         }
     }
