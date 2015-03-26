@@ -56,10 +56,10 @@ if (isset($_POST['btn_cadastrar']))
                                 </div>
                                 <div class="panel-body">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" name="nome" placeholder="Nome do prato" />
+                                            <input class="form-control" type="text" name="nome" placeholder="Nome do prato *" />
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" type="text" name="descricao" placeholder="Descricao do prato"></textarea>
+                                            <textarea class="form-control" type="text" name="descricao" placeholder="Descricao do prato *"></textarea>
                                         </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ if (isset($_POST['btn_cadastrar']))
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <textarea class="form-control" rows="10" type="text" name="receita" placeholder="Receita do prato"></textarea>
+                                        <textarea class="form-control" rows="10" type="text" name="receita" placeholder="Receita do prato* "></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@ if (isset($_POST['btn_cadastrar']))
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input type="file" name="foto" placeholder="Foto do prato" />
+                                        <input type="file" name="foto" placeholder="Foto do prato *" />
                                     </div>
                                 </div>
                             </div>
