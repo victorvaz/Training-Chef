@@ -54,8 +54,7 @@ class CozinheiroModel implements Model
                        email,
                        senha
                   FROM cozinheiro
-                 WHERE email = '{$email}'
-                   AND senha = '{$senha}'";
+                 WHERE idcozinheiro = " . $id;
                    
         $query = mysql_query($sql)
             or die ("Aconteceu um erro: Não foi possível buscar um cozinheiro por e-mail e senha");
