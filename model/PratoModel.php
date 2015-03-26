@@ -168,9 +168,20 @@ class PratoModel implements Model
         return $ListaPratos;
     }
 
+    /**
+     * Função para deletar um determinado prato.
+     * @param type $id
+     */
     public function deletar($id)
     {
+        $DAL = new DAL();
+        $DAL->conectar();
         
+        $sql = "DELETE FROM prato
+                 WHERE idprato = " . $id;
+        
+        $query = mysql_query($sql)
+            or die ("Aconteceu um erro: Não foi possível apagar o prato.");
     }
 
 }

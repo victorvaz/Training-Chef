@@ -38,7 +38,7 @@ $ListaPratos = $PratoModel->buscarPorCozinheiro($CozinheiroController->getInstan
                                 </div>
                                 <div class="panel-body">
                                     <div class="center">
-                                        <image class="img-thumbnail" src="<?php print $ListaPratos[$i]->getImagem(); ?>" />
+                                        <image class="img-thumbnail" width="100%" src="<?php print $ListaPratos[$i]->getImagem(); ?>" />
                                     </div>
                                     <br>
                                     <b>Nome: </b><?php print $ListaPratos[$i]->getNome(); ?>
