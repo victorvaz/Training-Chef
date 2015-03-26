@@ -24,6 +24,11 @@ interface EntidadeAutenticavel
      * Função para finalizar uma sessão.
      */
     public function finalizarSessao();
+    
+    /**
+     * Função para retornar a instancia da entidade autenticavel.
+     */
+    public function getInstance();
 }
 
 ?>

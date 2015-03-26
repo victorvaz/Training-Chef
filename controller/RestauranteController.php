@@ -78,6 +78,16 @@ class RestauranteController implements EntidadeAutenticavel
             return false;
         }
     }
+    
+    /**
+     * Função para retornar a instância do cozinheiro da sessão.
+     * @return \Cozinheiro
+     */
+    public function getInstance()
+    {
+        @session_start();
+        return $_SESSION[CozinheiroController::SESSION_COZINHEIRO];
+    }
 }
 
 ?>
