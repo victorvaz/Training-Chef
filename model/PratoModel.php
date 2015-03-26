@@ -32,11 +32,11 @@ class PratoModel implements Model
                                    descricao,
                                    imagem,
                                    receita)
-                           VALUES ( " + $Prato->getCozinheiro()->getID() + ",
-                                   '" + $Prato->getNome() + "',
-                                   '" + $Prato->getImagem() + "',
-                                   '" + $Prato->getDescricao() + "',
-                                   '" + $Prato->getReceita() + "')";
+                           VALUES ( " . $Prato->getCozinheiro()->getID() . ",
+                                   '" . $Prato->getNome() . "',
+                                   '" . $Prato->getDescricao() . "',
+                                   '" . $Prato->getImagem() . "',
+                                   '" . $Prato->getReceita() . "')";
         $query = mysql_query($sql)
             or die ("Aconteceu um erro: Não foi possível cadastrar o prato.");
     }
