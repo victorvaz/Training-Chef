@@ -34,19 +34,19 @@ class SiteConfig
      * @var type 
      */
     public static $MENU_PAGINAS = array(
-        0 => array(
+        array(
             'href' => 'index.php',
             'desc' => 'Home'
         ),
-        1 => array(
+        array(
             'href' => 'quem_somos.php',
             'desc' => 'Sobre o projeto'
         ),
-        2 => array(
+        array(
             'href' => 'cadastrar.php',
             'desc' => 'Cadastrar'
         ),
-        3 => array(
+        array(
             'href' => 'logar.php',
             'desc' => 'Acessar'
         )

@@ -46,15 +46,15 @@ class SiteConfig
      * @var type 
      */
     public static $MENU_PAGINAS = array(
-        0 => array(
+        array(
             'href' => 'index.php',
             'desc' => 'Home'
         ),
-        1 => array(
+        array(
             'href' => 'novo_prato.php',
             'desc' => 'Novo prato'
         ),
-        2 => array(
+        array(
             'href' => 'meus_pratos.php',
             'desc' => 'Meus pratos'
         ),
