@@ -3,31 +3,31 @@
 if (file_exists('controller/EntidadeAutenticavel.php')) { require_once 'controller/EntidadeAutenticavel.php'; }
 else { require_once 'EntidadeAutenticavel.php'; }
 
-if (file_exists('../model/CozinheiroModel.php')) { require_once '../model/CozinheiroModel.php'; }
-else { require_once 'model/CozinheiroModel.php'; }
+if (file_exists('../model/RestauranteModel.php')) { require_once '../model/RestauranteModel.php'; }
+else { require_once 'model/RestauranteModel.php'; }
 
 /**
- * Classe controladora para a entidade Cozinheiro
+ * Classe controladora para a entidade Restaurante
  * @author Victor Vaz <victor-vaz@hotmail.com>
  */
 class RestauranteController implements EntidadeAutenticavel
 {
-    const SESSION_COZINHEIRO = "COZINHEIRO";
+    const SESSION_RESTAURANTE = "RESTAURANTE";
     
     /**
-     * Função para autenticar um cozinheiro
-     * @param \Cozinheiro $Cozinheiro
+     * Função para autenticar um restaurante
+     * @param \Restaurante $Restaurante
      */
-    public function autenticar(\Entidade $Cozinheiro)
+    public function autenticar(\Entidade $Restaurante)
     {
-        $CozinheiroModel = new CozinheiroModel();
-        $ListaCozinheiros = $CozinheiroModel->buscarPorEmailSenha($Cozinheiro->getEmail(), $Cozinheiro->getSenha());
+        $RestauranteModel = new RestauranteModel();
+        $ListaRestaurantes = $RestauranteModel->buscarPorEmailSenha($Restaurante->getEmail(), $Restaurante->getSenha());
         
-        if (count($ListaCozinheiros) == 1)
+        if (count($ListaRestaurantes) == 1)
         {
             @session_start();
-            $_SESSION[RestauranteController::SESSION_COZINHEIRO] = $ListaCozinheiros[0];
-            header("Location: cozinheiro/index.php");
+            $_SESSION[RestauranteController::SESSION_RESTAURANTE] = $ListaRestaurantes[0];
+            header("Location: restaurante/index.php");
         }
         else
         {
@@ -54,14 +54,14 @@ class RestauranteController implements EntidadeAutenticavel
         @session_start();
         $resultadoValidacao = false;
         
-        if (isset($_SESSION[RestauranteController::SESSION_COZINHEIRO]))
+        if (isset($_SESSION[RestauranteController::SESSION_RESTAURANTE]))
         {        
-            $Cozinheiro = $_SESSION[RestauranteController::SESSION_COZINHEIRO];
+            $Restaurante = $_SESSION[RestauranteController::SESSION_RESTAURANTE];
 
-            $CozinheiroModel = new CozinheiroModel();
-            $ListaCozinheiros = $CozinheiroModel->buscarPorEmailSenha($Cozinheiro->getEmail(), $Cozinheiro->getSenha());
+            $RestauranteModel = new RestauranteModel();
+            $ListaRestaurantes = $RestauranteModel->buscarPorEmailSenha($Restaurante->getEmail(), $Restaurante->getSenha());
             
-            if (count($ListaCozinheiros) == 1)
+            if (count($ListaRestaurantes) == 1)
             {
                 $resultadoValidacao = true;
             }
