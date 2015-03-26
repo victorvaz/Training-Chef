@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Bootstrap Admin Template : Binary Admin</title>
 	<!-- BOOTSTRAP STYLES-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="view/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="view/css/font-awesome.css" rel="stylesheet" />
      <!-- MORRIS CHART STYLES-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="view/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
         <!-- CUSTOM STYLES-->
-    <link href="assets/css/custom.css" rel="stylesheet" />
+    <link href="view/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
@@ -37,7 +37,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="assets/img/find_user.png" class="user-image img-responsive"/>
+                    <img src="view/img/find_user.png" class="user-image img-responsive"/>
 					</li>
 				
 					
@@ -382,7 +382,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                             <ul class="chat-box">
                                 <li class="left clearfix">
                                     <span class="chat-img pull-left">
-                                        <img src="assets/img/1.png" alt="User" class="img-circle" />
+                                        <img src="view/img/1.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body">                                        
                                             <strong >Jack Sparrow</strong>
@@ -397,7 +397,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                                 <li class="right clearfix">
                                     <span class="chat-img pull-right">
 
-                                        <img src="assets/img/2.png" alt="User" class="img-circle" />
+                                        <img src="view/img/2.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         
@@ -412,7 +412,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                                 </li>
                                 <li class="left clearfix">
                                     <span class="chat-img pull-left">
-                                         <img src="assets/img/3.png" alt="User" class="img-circle" />
+                                         <img src="view/img/3.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         
@@ -427,7 +427,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                                 </li>
                                 <li class="right clearfix">
                                     <span class="chat-img pull-right">
-                                         <img src="assets/img/4.png" alt="User" class="img-circle" />
+                                         <img src="view/img/4.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
                                       
@@ -442,7 +442,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                                 </li>
                                     <li class="left clearfix">
                                     <span class="chat-img pull-left">
-                                        <img src="assets/img/1.png" alt="User" class="img-circle" />
+                                        <img src="view/img/1.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body">                                        
                                             <strong >Jack Sparrow</strong>
@@ -456,7 +456,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                                 </li>
                                 <li class="right clearfix">
                                     <span class="chat-img pull-right">
-                                       <img src="assets/img/2.png" alt="User" class="img-circle" />
+                                       <img src="view/img/2.png" alt="User" class="img-circle" />
                                     </span>
                                     <div class="chat-body clearfix">
                                         
@@ -521,16 +521,16 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="view/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="view/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src="view/js/jquery.metisMenu.js"></script>
      <!-- MORRIS CHART SCRIPTS -->
-     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
+     <script src="view/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="view/js/morris/morris.js"></script>
       <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js"></script>
+    <script src="view/js/custom.js"></script>
     
    
 </body>
