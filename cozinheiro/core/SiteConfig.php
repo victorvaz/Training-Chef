@@ -21,13 +21,19 @@ class SiteConfig
      * Caminho da logotipo do site
      * @var String
      */
-    public static $LOGOTIPO_HORIZONTAL = "view/images/logotipo_horizontal.png";
+    public static $LOGOTIPO_HORIZONTAL = "../view/images/logotipo_horizontal.png";
+    
+    /**
+     * Diretório para upload de imagens de perfil.
+     * @var String
+     */
+    public static $DIRETORIO_IMAGENS = "view/images/perfil/";
     
     /**
      * Prefixo do endereço para as páginas
      * @var type 
      */
-    public static $PREFIXO_ENDERECO = "/trainingchef/cozinheiro";
+    public static $PREFIXO_ENDERECO = "/trainingchef/cozinheiro/";
     
     /**
      * Páginas de menu
@@ -37,6 +43,14 @@ class SiteConfig
         0 => array(
             'href' => 'index.php',
             'desc' => 'Home'
-        )
+        ),
+        1 => array(
+            'href' => 'novo_prato.php',
+            'desc' => 'Novo prato'
+        ),
+        2 => array(
+            'href' => 'meus_pratos.php',
+            'desc' => 'Meus pratos'
+        ),
     );
 }

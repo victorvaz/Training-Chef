@@ -1,5 +1,6 @@
 <?php
-include '../controller/CozinheiroController.php';
+include_once '../controller/CozinheiroController.php';
+include_once 'core/SiteConfig.php';
 $CozinheiroController = new CozinheiroController();
 $CozinheiroController->validarSessao();
 
@@ -17,7 +18,7 @@ if (isset($_GET['logout']))
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="index.php">
-            <img src="../view/images/logotipo_horizontal.png" width="100%">
+            <img src="<?php print SiteConfig::$LOGOTIPO_HORIZONTAL; ?>" width="100%">
         </a>
     </div>
     <div style="color: white; padding: 15px 50px 5px 50px; float: right;">
