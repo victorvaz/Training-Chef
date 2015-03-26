@@ -10,7 +10,7 @@ else { require_once 'model/CozinheiroModel.php'; }
  * Classe controladora para a entidade Cozinheiro
  * @author Victor Vaz <victor-vaz@hotmail.com>
  */
-class RestauranteController implements EntidadeAutenticavel
+class CozinheiroController implements EntidadeAutenticavel
 {
     const SESSION_COZINHEIRO = "COZINHEIRO";
     
@@ -26,7 +26,7 @@ class RestauranteController implements EntidadeAutenticavel
         if (count($ListaCozinheiros) == 1)
         {
             @session_start();
-            $_SESSION[RestauranteController::SESSION_COZINHEIRO] = $ListaCozinheiros[0];
+            $_SESSION[CozinheiroController::SESSION_COZINHEIRO] = $ListaCozinheiros[0];
             header("Location: cozinheiro/index.php");
         }
         else
@@ -54,9 +54,9 @@ class RestauranteController implements EntidadeAutenticavel
         @session_start();
         $resultadoValidacao = false;
         
-        if (isset($_SESSION[RestauranteController::SESSION_COZINHEIRO]))
+        if (isset($_SESSION[CozinheiroController::SESSION_COZINHEIRO]))
         {        
-            $Cozinheiro = $_SESSION[RestauranteController::SESSION_COZINHEIRO];
+            $Cozinheiro = $_SESSION[CozinheiroController::SESSION_COZINHEIRO];
 
             $CozinheiroModel = new CozinheiroModel();
             $ListaCozinheiros = $CozinheiroModel->buscarPorEmailSenha($Cozinheiro->getEmail(), $Cozinheiro->getSenha());

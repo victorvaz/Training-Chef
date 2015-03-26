@@ -1,7 +1,42 @@
 <?php
 if (isset($_POST['btn_logar']))
 {
-    
+    if ($_POST['tipo'] == "cozinheiro")
+    {
+        include_once 'controller/CozinheiroController.php';
+        
+        $Cozinheiro = new Cozinheiro();
+        $Cozinheiro->setEmail($_POST['email']);
+        $Cozinheiro->setSenha($_POST['senha']);
+        
+        $CozinheiroController = new CozinheiroController();
+        if (!$CozinheiroController->autenticar($Cozinheiro))
+        {
+            ?>
+            <script>
+                alert("Os dados de autenticação fornecidos não são válidos!");
+            </script>
+            <?php
+        }
+    }
+    else if ($_POST['tipo'] == "restaurante")
+    {
+        include_once 'controller/RestauranteController.php';
+        
+        $Restaurante = new Restaurante();
+        $Restaurante->setEmail($_POST['email']);
+        $Restaurante->setSenha($_POST['senha']);
+        
+        $RestauranteController = new RestauranteController();
+        if (!$RestauranteController->autenticar($Restaurante))
+        {
+            ?>
+            <script>
+                alert("Os dados de autenticação fornecidos não são válidos!");
+            </script>
+            <?php
+        }
+    }
 }
 ?>
 <!DOCTYPE html>

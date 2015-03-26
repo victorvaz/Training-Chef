@@ -55,7 +55,7 @@ class CozinheiroModel implements Model
         $DAL = new DAL();
         $DAL->conectar();
         
-        $sql = "SELECT id,
+        $sql = "SELECT idcozinheiro,
                        nome,
                        email,
                        senha
@@ -71,7 +71,7 @@ class CozinheiroModel implements Model
         while ($row = mysql_fetch_array($query))
         {        
             $Cozinheiro = new Cozinheiro();
-            $Cozinheiro->setID($row['id']);
+            $Cozinheiro->setID($row['idcozinheiro']);
             $Cozinheiro->setNome($row['nome']);
             $Cozinheiro->setEmail($row['email']);
             $Cozinheiro->setSenha($row['senha']);
