@@ -27,7 +27,13 @@ class SiteConfig
      * Diretório para upload de imagens de perfil.
      * @var String
      */
-    public static $DIRETORIO_IMAGENS = "view/images/perfil/";
+    public static $DIRETORIO_IMAGENS_PERFIL = "view/images/perfil/";
+    
+    /**
+     * Diretório para upload de imagens de pratos.
+     * @var String
+     */
+    public static $DIRETORIO_IMAGENS_PRATO = "view/images/prato/";
     
     /**
      * Prefixo do endereço para as páginas
