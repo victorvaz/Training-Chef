@@ -21,6 +21,11 @@ $ListaPratos = $PratoModel->buscarPorCozinheiro($CozinheiroController->getInstan
                 </div>
                 <hr />
                 <div class="row">
+                    <?php if (count($ListaPratos) == 0) : ?>
+                    <div class="alert alert-info" role="alert">
+                        Você ainda não cadastrou um prato. <a href=novo_prato.php">Cadastre agora!</a>
+                    </div>
+                    <?php endif; ?>
                     <?php for ($i = 0; $i < count($ListaPratos); $i++) : ?>
                         <?php if ($i % 3 == 0) : ?>
                             </div>
