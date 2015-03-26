@@ -39,9 +39,36 @@ class CozinheiroModel implements Model
         
     }
 
+    /**
+     * Função para buscar um cozinheiro por ID
+     * @param int $id
+     * @return \Cozinheiro
+     */
     public function buscar($id)
     {
+        $DAL = new DAL();
+        $DAL->conectar();
         
+        $sql = "SELECT idcozinheiro,
+                       nome,
+                       email,
+                       senha
+                  FROM cozinheiro
+                 WHERE email = '{$email}'
+                   AND senha = '{$senha}'";
+                   
+        $query = mysql_query($sql)
+            or die ("Aconteceu um erro: Não foi possível buscar um cozinheiro por e-mail e senha");
+        
+        $row = mysql_fetch_array($query);
+                
+        $Cozinheiro = new Cozinheiro();
+        $Cozinheiro->setID($row['idcozinheiro']);
+        $Cozinheiro->setNome($row['nome']);
+        $Cozinheiro->setEmail($row['email']);
+        $Cozinheiro->setSenha($row['senha']);
+
+        return $Cozinheiro;
     }
     
     /**
