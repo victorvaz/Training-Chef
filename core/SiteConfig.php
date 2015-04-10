@@ -51,4 +51,31 @@ class SiteConfig
             'desc' => 'Acessar'
         )
     );
+    
+    /**
+     * Links de social
+     * @var type 
+     */
+    public static $MENU_LINKS_SOCIAL = array(
+        array(
+            'name' => 'facebook',
+            'link' => 'https://www.facebook.com/trainningchef'
+        ),
+        /* array(
+            'name' => 'twitter',
+            'link' => '#'
+        ),
+        array(
+            'name' => 'linkedin',
+            'link' => '#'
+        ),
+        array(
+            'name' => 'dribbble',
+            'link' => '#'
+        ),
+        array(
+            'name' => 'skype',
+            'link' => '#'
+        ) */
+    );
 }

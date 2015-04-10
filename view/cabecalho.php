@@ -4,16 +4,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-xs-4">
-                    <div class="top-number"><p><i class="fa fa-phone-square"></i> +55 31 9133-3767</p></div>
                 </div>
                 <div class="col-sm-6 col-xs-8">
                     <div class="social">
                         <ul class="social-share">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <?php for ($i = 0; $i < count(SiteConfig::$MENU_LINKS_SOCIAL); $i++) : ?>
+                            <li>
+                                <a href="<?php echo SiteConfig::$MENU_LINKS_SOCIAL[$i]['link']; ?>" target="_blank">
+                                    <i class="fa fa-<?php echo SiteConfig::$MENU_LINKS_SOCIAL[$i]['name']; ?>"></i>
+                                </a>
+                            </li>
+                            <?php endfor; ?>
                         </ul>
                     </div>
                 </div>
